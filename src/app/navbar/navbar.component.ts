@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { AuthorizationService } from '../services/authorization.service';
 
 
 @Component({
@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
 
-  constructor(private router: Router) {}
+  constructor(private auth: AuthorizationService) {}
 
   logout(){
     //  console.log("logout clicked")
-     this.router.navigate(['login'])
+     this.auth.logout()
 }
 
 }
