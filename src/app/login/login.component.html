@@ -11,6 +11,7 @@
   <div class="w-full xl:w-1/2 p-8">
     <form method="post" action="#" onSubmit="return false">
       <h1 class=" text-2xl font-bold">Sign in to your account</h1>
+      <p class="text-xs text-gray-400">Hint: type in given username and password</p>
       <div class="mb-4 mt-6">
         <label
           class="block text-gray-700 text-sm font-semibold mb-2"
@@ -23,6 +24,7 @@
           id="username"
           type="text"
           name="username"
+          placeholder="test"
           [(ngModel)]="username"
         />
       </div>
@@ -39,6 +41,7 @@
           type="password"
           name="password"
           [(ngModel)]="password"
+          placeholder="123"
         />
         <a
           class="inline-block align-baseline text-sm text-gray-600 hover:text-gray-800"
