@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { AuthorizationService } from '../services/authorization.service';
+import { Component, OnInit } from '@angular/core';
+import { AuthorizationService } from '../services/authorization/authorization.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,11 +7,15 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   username = '';
   password = '';
 
   constructor(private auth: AuthorizationService, private router: Router) {}
+
+  ngOnInit(): void {
+    
+  }
 
   login(){
     // console.log("login clicked")

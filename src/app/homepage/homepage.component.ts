@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../services/api/api.service';
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
-export class HomepageComponent {
+export class HomepageComponent implements OnInit {  
+  currencyData : any;
+
+  constructor(private api: ApiService){}
+
+  ngOnInit(): void {
+    this.getCurrency()
+  }
+
+  getCurrency(){
+    this.api.getCurrencyData()
+    .subscribe(res =>{
+      console.log(res)
+      this.currencyData = res
+    })
+  }
 
 }
