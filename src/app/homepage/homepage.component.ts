@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -9,7 +10,7 @@ import { ApiService } from '../services/api/api.service';
 export class HomepageComponent implements OnInit {  
   currencyData: any;
 
-  constructor(private api: ApiService){}
+  constructor(private api: ApiService, private router: Router){}
 
   ngOnInit(): void {
     this.getCurrency()
@@ -29,7 +30,7 @@ export class HomepageComponent implements OnInit {
   }
 
   handleClickCurrency(id: number){
-    window.location.href="/currency/"+ id
+    this.router.navigate(["/currency", id]);
   }
 
 }
