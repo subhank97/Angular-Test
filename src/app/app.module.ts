@@ -8,13 +8,15 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CurrencyComponent } from './currency/currency.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomepageComponent,
-    NavbarComponent
+    NavbarComponent,
+    CurrencyComponent
   ],
   imports: [
     BrowserModule,

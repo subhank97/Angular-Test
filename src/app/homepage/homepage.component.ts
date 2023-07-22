@@ -18,7 +18,7 @@ export class HomepageComponent implements OnInit {
   getCurrency(){
     this.api.getCurrencyData()
     .subscribe(res =>{
-      // console.log(res)
+      console.log(res)
       this.currencyData = res
     })
   }
@@ -26,6 +26,10 @@ export class HomepageComponent implements OnInit {
   roundedPrice(price: GLfloat){
     let newPrice = Math.round((price + Number.EPSILON) * 100) / 100 
     return newPrice
+  }
+
+  handleClickCurrency(id: number){
+    window.location.href="/currency/"+ id
   }
 
 }

@@ -37,7 +37,7 @@
                     </thead>
 
                     <tbody *ngFor="let data of currencyData">
-                        <tr>
+                        <tr (click)="handleClickCurrency(data.id)" class="hover:cursor-pointer hover:text-cyan-400">
                             <th
                                 class="border-t-0 border-l-0 border-r-0 whitespace-nowrap p-4">
                                 <img [src]="data.image" alt="crypto image" class="w-auto h-10" />
