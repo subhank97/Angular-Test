@@ -11,4 +11,9 @@ export class ApiService {
   getCurrencyData(){
     return this.http.get<any>('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd')
   }
+
+  getCoinData(id: string){
+    return this.http.get<any>(`https://api.coingecko.com/api/v3/coins/${id}?vs_currencies=usd`)
+  }
+  
 }

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ApiService } from '../services/api/api.service';
-
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-currency',
@@ -10,18 +10,23 @@ import { ApiService } from '../services/api/api.service';
 export class CurrencyComponent {
   coinData: any;
 
-  constructor(private api: ApiService){}
+  constructor(private api: ApiService, private route: ActivatedRoute){}
 
   ngOnInit(): void {
-    this.getCoin()
+    this.route.paramMap.subscribe(params => {
+      let id = params.get('id');
+      if (id !== null) {
+        this.getCoin(id);
+      }
+    });
   }
-
-  getCoin(){
-    this.api.getCurrencyData()
+  
+  getCoin(id: string){
+    this.api.getCoinData(id)
     .subscribe(res =>{
       console.log(res)
       this.coinData = res
-    })
+    });
   }
 
 }
