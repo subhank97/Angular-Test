@@ -7,7 +7,7 @@ import { ApiService } from '../services/api/api.service';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {  
-  currencyData : any;
+  currencyData: any;
 
   constructor(private api: ApiService){}
 
@@ -18,9 +18,14 @@ export class HomepageComponent implements OnInit {
   getCurrency(){
     this.api.getCurrencyData()
     .subscribe(res =>{
-      console.log(res)
+      // console.log(res)
       this.currencyData = res
     })
+  }
+
+  roundedPrice(price: GLfloat){
+    let newPrice = Math.round((price + Number.EPSILON) * 100) / 100 
+    return newPrice
   }
 
 }

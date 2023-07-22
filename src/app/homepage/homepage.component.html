@@ -40,7 +40,7 @@
                         <tr>
                             <th
                                 class="border-t-0 border-l-0 border-r-0 whitespace-nowrap p-4">
-                                <img src="{{data.image}}" alt="crypto image" class="w-auto h-10" />
+                                <img [src]="data.image" alt="crypto image" class="w-auto h-10" />
                             </th>
                             <td
                                 class="border-t-0 px-6 text-center border-l-0 border-r-0 text-s whitespace-nowrap p-4 uppercase ">
@@ -48,15 +48,15 @@
                             </td>
                             <td
                                 class="border-t-0 px-6 text-center border-l-0 border-r-0 text-s whitespace-nowrap p-4">
-                                ${{ data.current_price }}
+                                ${{ roundedPrice(data.current_price) }}
                             </td>
                             <td
                                 class="border-t-0 px-6 text-center border-l-0 border-r-0 text-s whitespace-nowrap p-4">
-                                $ {{ data.price_change_24h }}
+                                $ {{ roundedPrice(data.price_change_24h) }}
                             </td>
                             <td
                                 class="border-t-0 px-6 text-center border-l-0 border-r-0 text-s whitespace-nowrap p-4">
-                                {{ data.price_change_percentage_24h }}%
+                                {{ roundedPrice(data.price_change_percentage_24h) }}%
                             </td>
                         </tr>
                     </tbody>
